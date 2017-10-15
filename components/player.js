@@ -1,10 +1,17 @@
 AFRAME.registerPrimitive("a-player", {
 	defaultComponents: {
 		player: {},
+	},
+	mappings: {
+		name: "player.name"
 	}
 });
 AFRAME.registerComponent("player", {
-	schema: {},
+	schema: {
+		name: {
+			default: ""
+		}
+	},
 	init: function(){
 	},//init
 	play: function(){

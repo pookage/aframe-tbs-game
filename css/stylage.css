@@ -1,3 +1,23 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 canvas:hover {
 	cursor: pointer !important;
+}
+.ui-container {
+	position: absolute;
+	top: 5vh;
+	right: 5vh;
+	color: #000;
+	text-align: right;
+}
+
+.current-player:before {
+	content: "current player : ";
+}
+
+.end-turn {
+	padding: 1em;
 }

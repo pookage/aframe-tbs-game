@@ -22,7 +22,7 @@ class Player {
 
 	createPool(units){
 		const element = document.createElement("a-player");
-		element.setAttribute("id", this.name);
+		element.setAttribute("name", this.name);
 		return element;
 	}//createPool
 
@@ -35,5 +35,8 @@ class Player {
 	getElement(){
 		return this.pool;
 	}//getElement
+	getName(){
+		return this.name
+	}//getName
 
 }//player

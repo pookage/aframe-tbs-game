@@ -1,7 +1,7 @@
 AFRAME.registerPrimitive("a-board", {
 	defaultComponents: {
 		shadow: {
-			cast: false,
+			cast: true,
 			receive: true
 		},
 		rotation: {

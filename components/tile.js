@@ -52,11 +52,24 @@ AFRAME.registerComponent("tile", {
 		element.addEventListener("mouseup", component.select);
 
 	},//init
+	play: function(){
+		const parent = this.el.parentElement;
+		const board  = parent.components.board;
+
+		this.board = board;
+	},//play
 	focus: function(){
 		const element   = this.el || this;
 		const component = element.components.tile;
 
 		AFRAME.utils.entity.setComponentProperty(element, "material.color", component.colors.hover);
+
+		const GAME         = window.GAME;
+		const selectedUnit = GAME.getSelectedUnit();
+
+		if(!!selectedUnit){
+			component.board.drawLine(element, selectedUnit);
+		}
 
 	},//focus
 	blur: function(){

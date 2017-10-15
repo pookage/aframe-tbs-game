@@ -70,5 +70,11 @@ AFRAME.registerComponent("board", {
 			y: 0,
 			z: (dimensions/2) - 0.5
 		});
-	}//getOffsetPosition
+	},//getOffsetPosition
+	drawLine: function(from, to){
+		const sourcePos = from.object3D.getWorldPosition();
+		const targetPos = to.object3D.getWorldPosition();
+
+		console.log(sourcePos, targetPos);
+	}
 });

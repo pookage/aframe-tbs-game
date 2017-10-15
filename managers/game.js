@@ -40,5 +40,8 @@ class Game {
 	setSelectedUnit(unit){
 		this.selectedUnit = unit;
 	}//setSelectedUnit
+	getSelectedUnit(){
+		return this.selectedUnit;
+	}//getSelectedUnit
 
 }//GAME

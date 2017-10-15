@@ -40,6 +40,7 @@ AFRAME.registerComponent("tile", {
 		component.colors = {
 			default: "#ccc",
 			hover: "#eee",
+			active: "#111",
 			selected: "#666"
 		};
 
@@ -47,7 +48,8 @@ AFRAME.registerComponent("tile", {
 
 		element.addEventListener("mouseenter", component.focus);
 		element.addEventListener("mouseleave", component.blur);
-		element.addEventListener("click", component.select);
+		element.addEventListener("mousedown", component.active)
+		element.addEventListener("mouseup", component.select);
 
 	},//init
 	focus: function(){
@@ -63,6 +65,12 @@ AFRAME.registerComponent("tile", {
 
 		AFRAME.utils.entity.setComponentProperty(element, "material.color", component.colors.default);
 	},//blur
+	active: function(){
+		const element   = this.el || this;
+		const component = element.components.tile;
+
+		AFRAME.utils.entity.setComponentProperty(element, "material.color", component.colors.active);
+	},//active
 	select: function(){
 		const element            = this.el || this;
 		const component          = element.components.tile;

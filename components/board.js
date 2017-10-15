@@ -23,18 +23,13 @@ AFRAME.registerComponent("board", {
 	},
 	init: function(){
 
-		AFRAME.utils.bind(this.getDimensions, this);
-
 		const element    = this.el;
 		const data       = this.data;
 		const size       = data.size;
 		const dimensions = this.getDimensions(size);
 		const tiles      = this.generateTiles(dimensions);
-		const position   = {
-			x: -((dimensions/2) -0.5),
-			y: 0,
-			z: (dimensions/2) - 0.5
-		};
+		const position   = this.getOffsetPosition(dimensions);
+		
 
 		element.setAttribute("position", position);
 		element.appendChild(tiles);
@@ -43,11 +38,11 @@ AFRAME.registerComponent("board", {
 	getDimensions: function(size){
 		switch(size){
 			case "small":
-				return 8;
-			case "medium":
 				return 16;
-			case "large":
+			case "medium":
 				return 32;
+			case "large":
+				return 64;
 		}
 	},//getDimensions
 	generateTiles: function(dimensions){
@@ -67,5 +62,12 @@ AFRAME.registerComponent("board", {
 		}//x loop
 
 		return fragment;
-	}//generateTiles
+	},//generateTiles
+	getOffsetPosition: function(dimensions){
+		return({
+			x: -((dimensions/2) -0.5),
+			y: 0,
+			z: (dimensions/2) - 0.5
+		});
+	}//getOffsetPosition
 });

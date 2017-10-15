@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>A-Frame TBS Game</title>
+	<link rel="stylesheet" href="css/stylage.css">
+
+
+	<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+
+	<script src="components/user_camera.js"></script>
+
+	<script src="components/tile.js"></script>
+	<script src="components/board.js"></script>
+
+</head>
+<body>
+	<a-scene>
+
+		<a-user-camera>
+		</a-user-camera>
+
+		<!--ENVIRONMENT -->
+		<a-light
+			type="point"
+			intensity="0.2"
+			position="-25 30 25"
+			light="castShadow: true;">
+		</a-light>
+		<a-light
+			type="ambient"
+			intensity="0.8">
+		</a-light>
+
+		<!--GROUND-->
+		<a-board
+			size="small">
+		</a-board>
+	</a-scene>	
+</body>
+</html>

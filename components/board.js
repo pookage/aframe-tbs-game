@@ -36,7 +36,8 @@ AFRAME.registerComponent("board", {
 		
 	},//init
 	getDimensions: function(size){
-		switch(size){
+		const lookup = size || this.data.size;
+		switch(lookup){
 			case "small":
 				return 16;
 			case "medium":

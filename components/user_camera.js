@@ -14,7 +14,7 @@ AFRAME.registerPrimitive("a-user-camera", {
 		position: {
 			x: 0,
 			y: 15,
-			z: 0
+			z: 20
 		},
 		rotation: {
 			x: -30,

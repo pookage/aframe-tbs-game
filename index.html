@@ -5,13 +5,30 @@
 	<title>A-Frame TBS Game</title>
 	<link rel="stylesheet" href="css/stylage.css">
 
-
+	<!--AFRAME COMPONENTS-->
 	<script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-
 	<script src="components/user_camera.js"></script>
-
 	<script src="components/tile.js"></script>
 	<script src="components/board.js"></script>
+	<script src="components/unit.js"></script>
+	<script src="components/player.js"></script>
+
+
+	<!--GAME MANAGERS-->
+	<script src="managers/board.js"></script>
+	<script src="managers/player.js"></script>
+	<script src="managers/game.js"></script>
+
+	<script>
+		window.addEventListener("load", () => {
+			const game = new Game();
+
+			game.initialise();
+
+			window.GAME = game;
+		});
+	</script>
+
 
 </head>
 <body>
@@ -31,11 +48,6 @@
 			type="ambient"
 			intensity="0.8">
 		</a-light>
-
-		<!--GROUND-->
-		<a-board
-			size="small">
-		</a-board>
 	</a-scene>	
 </body>
 </html>
